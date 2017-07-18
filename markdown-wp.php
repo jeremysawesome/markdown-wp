@@ -27,4 +27,7 @@ class Awesome_Markdown_WP {
 
 }
 
+// for now simply new up a new Awesome_Markdown_WP object, _maybe_ convert to Singleton later
+new Awesome_Markdown_WP();
+
 endif; // end the `! class_exists( 'Awesome_Markdown_WP' )` test
