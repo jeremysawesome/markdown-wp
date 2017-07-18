@@ -8,3 +8,7 @@
  * Author: Jeremy Smith
  * Author URI: http://jeremysawesome.com
  */
+
+// recommended by https://codex.wordpress.org/Writing_a_Plugin
+defined( 'ABSPATH' ) || die( 'No script kiddies please!' );
+
