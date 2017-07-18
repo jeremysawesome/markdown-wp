@@ -12,3 +12,7 @@
 // recommended by https://codex.wordpress.org/Writing_a_Plugin
 defined( 'ABSPATH' ) || die( 'No script kiddies please!' );
 
+// do not redefine the class if it already exists
+if( ! class_exists( 'Awesome_Markdown_WP' ) ) :
+
+endif; // end the `! class_exists( 'Awesome_Markdown_WP' )` test
