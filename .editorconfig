@@ -4,6 +4,7 @@
 # WordPress Coding Standards specify that trailing whitespace should be removed
 # https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/#remove-trailing-spaces
 
+root = true
 
 [*]
 indent_style = tab
