@@ -25,6 +25,18 @@ if( ! class_exists( 'Awesome_Markdown_WP' ) ) :
  */
 class Awesome_Markdown_WP {
 
+	/**
+	 * Adds actions and filters.
+	 *
+	 * Registers the actions and filters that the Awesome_Markdown_WP plugin uses.
+	 *
+	 * @since 0.0.1
+	 * @access private
+	 */
+	private function init() {
+
+	}
+
 }
 
 // for now simply new up a new Awesome_Markdown_WP object, _maybe_ convert to Singleton later
