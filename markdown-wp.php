@@ -25,6 +25,10 @@ if( ! class_exists( 'Awesome_Markdown_WP' ) ) :
  */
 class Awesome_Markdown_WP {
 
+	public function __construct() {
+		$this->init();
+	}
+
 	/**
 	 * Adds actions and filters.
 	 *
