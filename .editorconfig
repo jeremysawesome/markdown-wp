@@ -1,11 +1,13 @@
 # WordPress Coding Standards Specify that tabs should be used
 # https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/#indentation
-indent_style = tab
 
 # WordPress Coding Standards specify that trailing whitespace should be removed
 # https://make.wordpress.org/core/handbook/best-practices/coding-standards/php/#remove-trailing-spaces
+
+root = true
+
+[*]
+indent_style = tab
 trim_trailing_whitespace = true
-
-
 insert_final_newline = true
 charset = utf-8
