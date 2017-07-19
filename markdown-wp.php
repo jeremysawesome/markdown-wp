@@ -58,9 +58,15 @@ class Awesome_Markdown_WP {
 	 * @access private
 	 */
 	private function enqueue_admin_js() {
+
+		// see the "marked" library: https://github.com/chjj/marked
+		wp_register_script( 'awesome-markdown-wp_marked',
+			plugins_url( 'js/lib/marked-0.3.6.min.js', __FILE__ )
+		);
+
 		wp_register_script( 'awesome-markdown-wp_js',
 			plugins_url( 'js/markdown-wp.js', __FILE__ ),
-			array( ),
+			array( 'awesome-markdown-wp_marked' ),
 			'0.0.1'
 		);
 
