@@ -71,6 +71,9 @@ class Awesome_Markdown_WP {
 		// disable TinyMCE
 		$settings['tinymce'] = false;
 
+		// disable media buttons - this takes care of also disabling the built in editor tab container.
+		$settings['media_buttons'] = false;
+
 		return $settings;
 	}
 
