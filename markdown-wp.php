@@ -38,7 +38,24 @@ class Awesome_Markdown_WP {
 	 * @access private
 	 */
 	private function init() {
+		if ( is_admin() ) {
+			add_filter( 'wp_editor_settings', array( $this, 'filter_wp_editor_settings' ), 10, 2 );
+		}
+	}
 
+	/**
+	 * Filters the WP Editor settings.
+	 *
+	 * @since 0.0.1
+	 * @access public
+	 *
+	 * @param array $settings The array of WP Editor settings to be filtered.
+	 * @param string $editor_id ID for the current editor instance.
+	 *
+	 * @return array The filtered WP Editor settings.
+	 */
+	public function filter_wp_editor_settings( $settings, $editor_id ) {
+		return $settings;
 	}
 
 }
