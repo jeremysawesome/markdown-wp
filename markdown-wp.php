@@ -42,9 +42,29 @@ class Awesome_Markdown_WP {
 		// TODO: Initialize language translations and generate POT files.
 
 		if ( is_admin() ) {
+			add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+
 			add_filter( 'wp_editor_settings', array( $this, 'filter_wp_editor_settings' ), 10, 2 );
 			add_filter( 'the_editor', array( $this, 'expand_the_editor' ), 10, 1 );
 		}
+	}
+
+	/**
+	 * Enqueue the plugin JavaScript.
+	 *
+	 * Registers the plugin JavaScript files and queues them up for output.
+	 *
+	 * @since 0.0.1
+	 * @access private
+	 */
+	private function enqueue_admin_js() {
+		wp_register_script( 'awesome-markdown-wp_js',
+			plugins_url( 'js/markdown-wp.js', __FILE__ ),
+			array( ),
+			'0.0.1'
+		);
+
+		wp_enqueue_script( 'awesome-markdown-wp_js' );
 	}
 
 	/**
@@ -74,6 +94,20 @@ class Awesome_Markdown_WP {
 		];
 
 		return implode( "", $buttons );
+	}
+
+	/**
+	 * Register and enqueue the scripts used by the plugin.
+	 *
+	 * @since 0.0.1
+	 * @access public
+	 *
+	 * @see enqueue_admin_js
+	 *
+	 * @param string $hook The current admin page as specified by the `admin_enqueue_scripts` action.
+	 */
+	public function enqueue_scripts( $hook ) {
+		$this->enqueue_admin_js();
 	}
 
 	/**
