@@ -45,6 +45,35 @@ class Awesome_Markdown_WP {
 	}
 
 	/**
+	 * Builds out the HTML for the editor buttons.
+	 *
+	 * Creates two new buttons to be used with the editor. The "Markdown" button and the "HTML" button.
+	 * These two buttons are used to toggle between the two kinds of editors. The Markdown editor and the HTML editor.
+	 *
+	 * @since 0.0.1
+	 * @access private
+	 *
+	 * {@see 'esc_html'}
+	 *
+	 * @return string The html necessary to display the new editor buttons.
+	 */
+	private function build_editor_buttons() {
+
+		// nest the buttons inside the `wp-editor-tools` and `wp-editor-tabs` divs to appear more like the default editor
+		$buttons = [
+			'<div class="wp-editor-tools hide-if-no-js"><div class="wp-editor-tabs">',
+				'<button type="button" id="awesome-markdown-wp_markdown" class="wp-switch-editor switch-markdown">',
+					esc_html( __( 'Markdown', 'awesome-markdown-wp' ) ),
+				'</button><button type="button" id="awesome-markdown-wp_html" class="wp-switch-editor switch-html">',
+					esc_html( __( 'HTML', 'awesome-markdown-wp' ) ),
+				'</button>',
+			'</div></div>'
+		];
+
+		return implode( "", $buttons );
+	}
+
+	/**
 	 * Expands the WP Editor.
 	 *
 	 * @since 0.0.1
@@ -53,6 +82,9 @@ class Awesome_Markdown_WP {
 	 * @return string Editor's HTML markup.
 	 */
 	public function expand_the_editor( $output ){
+		// add the expanded editor buttons above the editor
+		$output = $this->build_editor_buttons() . $output;
+
 		return $output;
 	}
 
