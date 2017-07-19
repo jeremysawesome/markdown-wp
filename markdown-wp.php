@@ -40,7 +40,20 @@ class Awesome_Markdown_WP {
 	private function init() {
 		if ( is_admin() ) {
 			add_filter( 'wp_editor_settings', array( $this, 'filter_wp_editor_settings' ), 10, 2 );
+			add_filter( 'the_editor', array( $this, 'expand_the_editor' ), 10, 1 );
 		}
+	}
+
+	/**
+	 * Expands the WP Editor.
+	 *
+	 * @since 0.0.1
+	 * @access public
+	 *
+	 * @return string Editor's HTML markup.
+	 */
+	public function expand_the_editor( $output ){
+		return $output;
 	}
 
 	/**
