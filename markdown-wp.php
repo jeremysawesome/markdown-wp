@@ -55,6 +55,9 @@ class Awesome_Markdown_WP {
 	 * @return array The filtered WP Editor settings.
 	 */
 	public function filter_wp_editor_settings( $settings, $editor_id ) {
+		// disable TinyMCE
+		$settings['tinymce'] = false;
+
 		return $settings;
 	}
 
