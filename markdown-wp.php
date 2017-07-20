@@ -50,6 +50,27 @@ class Awesome_Markdown_WP {
 	}
 
 	/**
+	 * Enqueue the plugin styles.
+	 *
+	 * Registers the plugin styles and queues them up for output.
+	 *
+	 * @since 0.0.1
+	 * @access private
+	 *
+	 * {@see 'wp_register_style'}
+	 * {@see 'wp_enqueue_style'}
+	 */
+	private function enqueue_admin_css() {
+		wp_register_style( 'awesome-markdown-wp_css',
+			plugins_url( 'css/markdown-wp.css', __FILE__ ),
+			array(),
+			'0.0.1'
+		);
+
+		wp_enqueue_style( 'awesome-markdown-wp_css' );
+	}
+
+	/**
 	 * Enqueue the plugin JavaScript.
 	 *
 	 * Registers the plugin JavaScript files and queues them up for output.
@@ -134,6 +155,7 @@ class Awesome_Markdown_WP {
 	 * @param string $hook The current admin page as specified by the `admin_enqueue_scripts` action.
 	 */
 	public function enqueue_scripts( $hook ) {
+		$this->enqueue_admin_css();
 		$this->enqueue_admin_js();
 	}
 
