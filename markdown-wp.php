@@ -103,6 +103,27 @@ class Awesome_Markdown_WP {
 	}
 
 	/**
+	 * Builds out the HTML for the Markdown editor.
+	 *
+	 * The Markdown editor consists of two sections, a preview section and a textarea. The preview pane is used to show
+	 * the rendered result of the inserted markdown.
+	 *
+	 * @since 0.0.1
+	 * @access private
+	 */
+	private function build_markdown_editor() {
+
+		// TODO: Load in any previously saved Markdown to display in the text area
+
+		// the markdown editor will consist of two pieces. A preview pane which shows the rendered HTML and a text area
+		$editor = '<div id="awesome-markdown-wp" class="wp-editor-container">'.
+			'<div class="awesome-markdown-wp_preview"></div>'.
+			'<textarea class="wp-editor-area"></textarea></div>';
+
+		return $editor;
+	}
+
+	/**
 	 * Register and enqueue the scripts used by the plugin.
 	 *
 	 * @since 0.0.1
@@ -127,6 +148,9 @@ class Awesome_Markdown_WP {
 	public function expand_the_editor( $output ){
 		// add the expanded editor buttons above the editor
 		$output = $this->build_editor_buttons() . $output;
+
+		// add the markdown editor inside the wp-editor-container
+		$output .= $this->build_markdown_editor();
 
 		return $output;
 	}
