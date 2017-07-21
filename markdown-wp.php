@@ -18,7 +18,7 @@ if( ! class_exists( 'Awesome_Markdown_WP' ) ) :
 /**
  * Adds a markdown editor and preview pane when writing posts in WordPress.
  *
- * Allows posts to be written and editing using Markdown. Markdown inserted into this editor is parsed and displayed
+ * Allows posts to be written and edited using Markdown. Markdown inserted into this editor is parsed and displayed
  * in a preview section. Utilizes GitHub flavored Markdown (see: https://github.github.com/gfm/).
  *
  * @since 0.0.1
