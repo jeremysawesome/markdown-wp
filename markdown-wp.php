@@ -87,7 +87,7 @@ class Awesome_Markdown_WP {
 
 		wp_register_script( 'awesome-markdown-wp_js',
 			plugins_url( 'js/markdown-wp.js', __FILE__ ),
-			array( 'awesome-markdown-wp_marked' ),
+			array( 'awesome-markdown-wp_marked', 'jquery' ),
 			'0.0.1'
 		);
 
