@@ -19,6 +19,12 @@
 		}
 
 		switch_to_markdown_editor();
+		initialize_editor_tabs();
+	}
+
+	function initialize_editor_tabs() {
+		$( document.getElementById( 'awesome-markdown-wp_markdown' ) ).on( 'click', switch_to_markdown_editor );
+		$( document.getElementById( 'awesome-markdown-wp_html' ) ).on( 'click', switch_to_html_editor );
 	}
 
 	function switch_to_markdown_editor() {
