@@ -1,2 +1,9 @@
 .html-active #awesome-markdown-wp { display: none; }
+
 .markdown-active .wp-editor-container:not( #awesome-markdown-wp ) { display: none; }
+
+.markdown-active .switch-markdown {
+	background: #f5f5f5;
+	color: #555;
+	border-bottom-color: #f5f5f5;
+}
