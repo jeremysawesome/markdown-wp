@@ -17,6 +17,11 @@
 			// if we don't have editor, then get it by traversing the DOM
 			$wp_editor = editor_wrap_container.find( '.wp-editor-container:not( #awesome-markdown-wp ) textarea' );
 		}
+
+	}
+	function switch_to_markdown_editor() {
+		$editor_wrap_container.addClass( 'markdown-active' )
+			.removeClass( 'html-active' );
 	}
 
 	$( document ).ready( initialize );
