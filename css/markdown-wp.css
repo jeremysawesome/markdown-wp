@@ -1,1 +1,2 @@
 .html-active #awesome-markdown-wp { display: none; }
+.markdown-active .wp-editor-container:not( #awesome-markdown-wp ) { display: none; }
