@@ -20,6 +20,14 @@
 
 		switch_to_markdown_editor();
 		initialize_editor_tabs();
+		$markdown_editor.on( 'input', handle_markdown_editor_change );
+	}
+
+	function handle_markdown_editor_change() {
+		let parsed_html = marked( $markdown_editor.val() );
+
+		$markdown_preview.html( parsed_html );
+		$wp_editor.text( parsed_html );
 	}
 
 	function initialize_editor_tabs() {
