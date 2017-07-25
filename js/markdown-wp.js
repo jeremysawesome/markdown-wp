@@ -1,4 +1,4 @@
-( function( marked, $ ) {
+( function( marked, $, document ) {
 	var $markdown_editor_container,
 		$markdown_editor,
 		$markdown_preview,
@@ -38,4 +38,4 @@
 	}
 
 	$( document ).ready( initialize );
-} )( marked, jQuery );
+} )( marked, jQuery, document );
