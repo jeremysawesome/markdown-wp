@@ -24,5 +24,10 @@
 			.removeClass( 'html-active' );
 	}
 
+	function switch_to_html_editor() {
+		$editor_wrap_container.addClass( 'html-active' )
+			.removeClass( 'markdown-active' );
+	}
+
 	$( document ).ready( initialize );
 } )( marked, jQuery );
