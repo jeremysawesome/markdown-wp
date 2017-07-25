@@ -19,6 +19,7 @@
 		}
 
 	}
+
 	function switch_to_markdown_editor() {
 		$editor_wrap_container.addClass( 'markdown-active' )
 			.removeClass( 'html-active' );
