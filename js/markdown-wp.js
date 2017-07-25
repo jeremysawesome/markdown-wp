@@ -18,6 +18,7 @@
 			$wp_editor = editor_wrap_container.find( '.wp-editor-container:not( #awesome-markdown-wp ) textarea' );
 		}
 
+		switch_to_markdown_editor();
 	}
 
 	function switch_to_markdown_editor() {
