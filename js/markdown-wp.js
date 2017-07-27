@@ -19,6 +19,10 @@
 		}
 
 		switch_to_markdown_editor();
+
+		// set the default WP editor to be readonly, we aren't doing two way Markdown conversion at this point
+		$wp_editor.attr( 'readonly', 'readonly' );
+
 		initialize_editor_tabs();
 		$markdown_editor.on( 'input', handle_markdown_editor_change );
 	}
